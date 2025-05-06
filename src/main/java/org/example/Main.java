@@ -1,17 +1,29 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        CreativeDirector don = new CreativeDirector("Don Draper", (byte) 40);
+        AccountExecutive roger = new AccountExecutive("Roger Sterling", (byte) 45);
+        Secretary joan = new Secretary("Joan Holloway", (byte) 35);
+        Employee peggy = new Employee("Peggy Olson", (byte) 30, "Copywriter");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Client luckyStrike = new Client("Lee Garner Jr.", (byte) 50, "Lucky Strike");
+
+        Agency sCDP = new Agency("Sterling Cooper Draper Pryce");
+        sCDP.addEmployee(don);
+        sCDP.addEmployee(roger);
+        sCDP.addEmployee(joan);
+        sCDP.addEmployee(peggy);
+
+        sCDP.showEmployees();
+
+        roger.meetClient();
+        joan.answerPhone();
+        luckyStrike.requestCampaign();
+
+        AdvertisingCampaign campaign1 = new AdvertisingCampaign("Smoke with Style", luckyStrike, don);
+        campaign1.launch();
+
+        don.createCampaign();
     }
 }

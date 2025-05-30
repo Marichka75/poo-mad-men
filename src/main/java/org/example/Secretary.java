@@ -7,6 +7,7 @@ public class Secretary extends Employee {
     }
 
     public void answerPhone() {
+
         System.out.println(getName() + " is answering the phone.");
     }
 }
